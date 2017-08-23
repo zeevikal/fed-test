@@ -6,9 +6,12 @@ function printSearchData(responseData) {
         console.log(element.show);
         var j = 0;
         var tr = table.insertRow(i++);
+        tr.id = "tr-" + j;
         var td = tr.insertCell(j++);
+        td.id = "movie-name-" + i;
         td.innerText = element.show.name;
         td = tr.insertCell(j++);
+        td.id = "movie-img-" + i;
         if (element.show.image) {
             var img = document.createElement('img');
             img.src = element.show.image.medium;
@@ -37,3 +40,28 @@ document.getElementById("search-button").addEventListener("click", function () {
         }
     });
 });
+
+
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("tr-0");
+var span = document.getElementsByClassName("close")[0];
+console.log('btn: ', btn);
+
+setInterval(function () {
+
+});
+if (btn) {
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
