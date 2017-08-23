@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FED-Test</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div id="container">
+        <div id="searchBox">
+            <form action="">
+                <input id="search-input" type="text" name="searchMovie" value="" autocomplete="on" placeholder="Enter a movie name here..." size="40">
+                <button id="search-button" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div id="moviesSection">
+            <div class="movie"></div>
+            <div class="movie"></div>
+            <div class="movie"></div>
+            <div class="movie"></div>
+            <div class="movie"></div>
+            <div class="movie"></div>
+            <div class="movie"></div>
+            <div class="movie"></div>
+            <div class="movie"></div>
+            <div class="movie"></div>
+            <div class="movie"></div>
+        </div>
+    </div>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        var url = "http://api.tvmaze.com/singlesearch/shows?q=girls";
+
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    </script>
+</body>
+</html>
